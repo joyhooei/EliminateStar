@@ -1,0 +1,437 @@
+/*
+ * 本层拥有处理星星的实例化以及对星星的操作
+ * 1/排列星星
+ * 2/移动和删除星星
+ */
+var GAMESTARLAYOUT;
+var GameStarLayout = ccui.Layout.extend(
+{
+	size:null,
+	starArr:[],//存放点击与被点击状态的星星资源
+	starObjArr:[],//存放游戏中星星的二位数组
+	firstTouchStar:null,//第一次选择的星星,用于判断两次选择的星星颜色是否一致
+	isSelected:false,//是否选择星星,如果已选择则再次点击将星星消灭
+	starList:[],//相连同色星星列表
+	starNum:0,//当前关卡星星个数
+	ctor:function()
+	{
+		this._super();
+		this.zinit();
+		this.layoutStar();
+	},
+	//将星星按10*10的矩阵排列出来
+	layoutStar:function()
+	{
+		for(var i = 0; i < 10; i++)
+		{
+			for(var j = 0; j < 10; j++)	
+			{
+				//随机从5种不同颜色的星星中选择一个
+				var randomNumber = Math.floor(Math.random()*this.starNum);
+				var starResource = this.starArr[randomNumber];
+				var star = new GameCreateStar(starResource.normal, starResource.id,starResource.selected, i, j);
+				this.addChild(star, 0);
+				//星星出现的动画
+				var moveTo = cc.moveTo(i/10, cc.p(star.width*i, star.height*j));
+				star.runAction(moveTo);
+				//将星星装到数组中
+				this.starObjArr[i][j] = star;
+				//给每一个星星注册侦听器
+				star.addTouchEventListener(this.onTouchStarFunc, this);
+			}
+		}
+	},
+	//星星触摸侦听函数
+	onTouchStarFunc:function(target, state)
+	{
+		if(state == ccui.Widget.TOUCH_ENDED)	//松开
+		{
+			if(!this.firstTouchStar)	//如果第一次选择的星星为空,则将当前星星赋给它
+			{
+				this.firstTouchStar = target;
+				this.findSameColorStar(target);
+			}
+			else 	
+			{
+				if(this.starList.length <1){return;} //确保相连同色星星列表不为空,代码才会向下执行
+				if(this.starList[0].count != target.count) //第二次点击的不是上一次选择的星星
+				{
+					//将列表中的星星type还原
+					this.setStarListItemToNomal(this.starList);
+					this.findSameColorStar(target);
+				}
+				else	//第二次点击相连同色星星列表中的星星
+				{
+					if(this.starList.length >1)
+					{
+						this.firstTouchStar = null;
+						this.getScore();
+						this.resetStarRow();
+					}
+				}
+			}
+		}
+	},
+	//消灭信息获得积分
+	getScore:function()
+	{
+		//GAMETOP对象为GameTopInformation的实例;
+		GAMETOP.updateGameScore(this.starList);
+	},
+	//当消灭星星后,如果上方还有星星存在,则要重新设置他们的row值,用于向下移动星星
+	resetStarRow:function()
+	{
+		for(var i = 0; i < this.starList.length; i++)
+		{
+			this.starList[i].type = -1;
+			this.starList[i].removeFromParent();
+			for(var j = this.starList[i].row+1; j< 10; j++)
+			{
+				if(!this.starObjArr[this.starList[i].col][j]){continue;} 
+				this.starObjArr[this.starList[i].col][j].row--;
+				this.starObjArr[this.starList[i].col][j-1] = this.starObjArr[this.starList[i].col][j];
+				this.starObjArr[this.starList[i].col][j] = null;
+			}
+		}
+	},
+	//消灭相连在一起的同色星星
+	removeSameColorStar:function()
+	{
+		for(var i = 0; i < this.starList.length; i++)
+		{
+			//this.starObjArr是二维数组
+			for(var j = 0; j < this.starObjArr.length; j++)
+			{
+				for(var k = 0; k < this.starObjArr.length; k++)
+				{
+					if(!this.starObjArr[j][k]){continue;} 
+					if(this.starObjArr[j][k].col == this.starList[i].col && this.starObjArr[j][k].row == this.starList[i].row)
+					{
+						this.starObjArr[j][k].removeFromParent();
+					}
+				}
+			}
+		}
+		this.starList.splice(0);
+	},
+	//逐帧监听器,在游戏过程中一直执行
+	update:function()
+	{
+		//检测是否有需要移动的星星(上边的向下移动,右边的向左边移动
+		this.checkMove();
+	},
+	//检测是否有需要移动的星星,如果被消除的星星上方还有星星,则上方的需要掉下来,如果这一列为空了且右边还有星星,则右边的需要往做移动
+	checkMove:function()	
+	{
+		//检测上方
+		this.checkTop();
+	},
+	//检测被移除星星上方是否还有星星,如果有则下移
+	checkTop:function()
+	{
+		var needMove = false;
+		for(var i = 0; i < 10; i++)
+		{
+			for(var j = 0; j < 10; j++)
+			{
+				if(this.starObjArr[i][j] !=null && this.starObjArr[i][j].type != -1)
+				{
+					//向下移动
+					if(this.starObjArr[i][j].y > this.starObjArr[i][j].row*48)
+					{
+						this.starObjArr[i][j].y -= 8;
+						needMove = true;
+					}
+					//向左移动
+					if(this.starObjArr[i][j].x > this.starObjArr[i][j].col*48)
+					{
+						this.starObjArr[i][j].x -= 8;
+						needMove = true;
+					}
+				}
+			}
+		}
+		//当有星星向下移动时,不能移动列
+		if(!needMove)
+		{
+			//检测是否有空列,如果有则把其右边的列向左移动
+			this.checkEmptyColums();
+		}
+	},
+	//检测空列
+	checkEmptyColums:function()
+	{
+		var existEmptyCol = false;
+		for(var i = 0; i < 10; i++)
+		{
+			if(!existEmptyCol)
+			{
+				//只有在消灭星星后才能检测空列
+				if(this.firstTouchStar == null)
+				{
+					//当列的最下面元素为空时,说明该列为空
+					if(this.starObjArr[i][0] == null || this.starObjArr[i][0].type == -1)
+					{
+						existEmptyCol = true;
+					}
+				}
+			}
+			//当有空列时,处理列的移动和col属性的设置
+			else if(existEmptyCol)
+			{
+				for(var j = 0; j < 10; j++)
+				{
+					if(this.starObjArr[i][j] != null )
+					{
+						this.starObjArr[i][j].col--;
+						this.starObjArr[i-1][j] = this.starObjArr[i][j];
+						this.starObjArr[i][j] = null;
+					}
+				}
+			}
+		}
+	},
+	//寻找相连在一起同色的星星
+	findSameColorStar:function(target)
+	{
+		//相连同色星星列表
+		this.starList.splice(0);	//将列表清空
+		this.starList = this.getSameColorStar(target.col, target.row, target.type);
+		//将满足条件的相连同色星星设为选中状态,玩家能对消除星星数量一幕了然
+		this.showCurrentSameStarSelectedState(this.starList);
+	},
+	//如果两次选择的不是同种颜色的星星,则将之前选择的星星设为初始状态
+	setStarListItemToNomal:function(starList)
+	{
+		for(var i = 0; i < starList.length; i++)
+		{
+			//还原列表中星星的初始type值
+			starList[i].type = starList[i].normalType;
+			starList[i].isSelected = false;
+			starList[i].updateTexture();
+			starList[i].count = 0;
+		}
+	},
+	//将满足条件的相连同色星星设为选中状态
+	showCurrentSameStarSelectedState:function(starList)
+	{
+		for(var i = 0; i < starList.length; i++)
+		{
+			starList[i].isSelected = true;
+			starList[i].updateTexture();
+			starList[i].count++;
+		}
+	},
+	//获得相连同色星星列表
+	getSameColorStar:function(col, row, type)
+	{
+		var starList = [];
+		//星星必须在矩阵范围内(9X9)
+		if(this.jugementStarPostion(col, row) == -1)
+		{
+			return starList;	
+		}
+		if(this.starObjArr[col][row].type == type)
+		{
+			starList.push(this.starObjArr[col][row]);
+			this.starObjArr[col][row].type = -1;
+			//递归调用,寻找当前星星四周的同色星星
+			starList = starList.concat(this.getSameColorStar(col+1, row, type));//右边
+			starList = starList.concat(this.getSameColorStar(col - 1, row, type));//左边
+			starList = starList.concat(this.getSameColorStar(col, row + 1, type));//上方
+			starList = starList.concat(this.getSameColorStar(col, row - 1, type));//下方
+		}
+		return starList;
+	},
+	//判断col,row值是否在矩阵范围内,
+	jugementStarPostion:function(col, row)
+	{
+		if(col < 0 ||col >9)	//超出水平范围
+		{
+			return -1;
+		}
+		if(row < 0 || row > 9) //超出垂直范围
+		{
+			return -1;
+		}
+		if(this.starObjArr[col][row] == null || this.starObjArr[col][row] == undefined)	//该对象不存在
+		{
+			return -1;
+		}
+		return this.starObjArr[col][row].type;
+	},
+	//检测游戏结束当没有可以消除的星星时游戏宣布结束
+	checkGameOver:function()
+	{
+		//遍历所有的星星
+		for(var i = 0; i < 10; i++)
+		{
+			for(var j = 0; j < 10; j++)
+			{
+				var starType = this.jugementStarPostion(i, j);
+				if(starType == -1){continue;}//不存在星星,则继续下一次循环(当starType =-1时表示该位置没有星星)
+				if(starType == this.jugementStarPostion(i, j+1)){return;}//同理
+				if(starType == this.jugementStarPostion(i+1, j)){return;}//当相邻有相同颜色星星时还回(因为是遍历每一个星星,所以水平方向只需要检测星星相邻右侧是否有相同颜色的就可以了)
+			}
+		}
+		//当没有相同颜色的星星时,宣布游戏结束
+		this.endGame();
+	},
+	//游戏结束
+	endGame:function()
+	{
+		//未通关,还回游戏初始界面
+		if(!GAMETOP.isPause)//非暂停状态下判断游戏是否结束
+		{
+			if(GAMETOP.scoreNumber < GAMETOP.standardScore)
+			{
+				GAMETOP.passedLevelEffect(res.fail);
+				var delayTime = cc.DelayTime.create(2.2);
+				var callFunc = cc.CallFunc.create(function()
+				{
+					PlayerLocalData.deleteItem();//删除游戏纪录
+					var newGameScene = GameInitializeScene.createScene();
+					cc.director.runScene(cc.TransitionFade.create(1, newGameScene));
+				}, this);
+				this.runAction(cc.Sequence.create(delayTime, callFunc));
+			}else
+			{
+				this.continueOrEndGame();
+			}
+		}
+		else//通过,弹出继续游戏和保存退出按钮
+		{
+			this.continueOrEndGame();
+		}
+	},
+	//通过,弹出继续游戏和保存退出按钮
+	continueOrEndGame:function()
+	{
+		//显示继续游戏和保存退出的层
+		this.layout = ccui.Layout.create();
+		this.layout.setSize(Def.windowSize());
+		this.parent.addChild(this.layout, 50);
+		var layerColor = cc.LayerColor.create();
+		layerColor.setColor(cc.color(0, 0, 0, 155));
+		this.layout.addChild(layerColor, 0);
+		var endX = 240;
+		var endY = 850;
+		var b = 400;
+		var c = 330;
+		//继续游戏
+		var continueGameBtn = new myButton(res.resume);
+		continueGameBtn.setAnchorPoint(0.5, 0.5);
+		continueGameBtn.name = "continueGame";
+		continueGameBtn.x = endX;
+		continueGameBtn.y = endY
+		this.layout.addChild(continueGameBtn, 1);
+		//action2
+		var moveTo2 = cc.MoveTo.create(4, cc.p(endX, b));
+		var easeOut2 = moveTo2.clone().easing(cc.easeElasticOut());
+		continueGameBtn.runAction(easeOut2);
+		//保存退出
+		var saveAndOut = new myButton("img/saveexit.png");
+		saveAndOut.setAnchorPoint(0.5, 0.5);
+		saveAndOut.name = "save";
+		saveAndOut.x = endX;
+		saveAndOut.y = endY;
+		this.layout.addChild(saveAndOut, 1);
+		//action3
+		var moveTo3 = cc.MoveTo.create(3, cc.p(endX, c));
+		var easeOut3 = moveTo3.clone().easing(cc.easeElasticOut());
+		saveAndOut.runAction(easeOut3);
+
+		continueGameBtn.addTouchEventListener(this.btnControlGameFunc, this);
+		saveAndOut.addTouchEventListener(this.btnControlGameFunc, this);
+	},
+	//按钮侦听函数
+	btnControlGameFunc:function(target, state)
+	{
+		if(state == ccui.Widget.TOUCH_ENDED)//松开
+		{
+			switch (target.name)
+			{
+				case "continueGame"://继续游戏
+					if(GAMETOP.isPause)//暂停状态,还回继续游戏
+					{
+						GAMETOP.isPause = false;
+						this.layout.removeFromParent();
+					}
+					else
+					{
+						var newGameScene = TransitionScene.createScene(false);
+						cc.director.runScene(cc.TransitionFade.create(1, newGameScene));
+						cc.log("newGame");
+					}
+					break;
+						
+				case "save"://保存退出
+					var newGameScene = GameInitializeScene.createScene();
+					cc.director.runScene(cc.TransitionFade.create(1, newGameScene));
+					break;
+					
+				default:
+					break;
+			}
+		}
+	},
+	//初始化
+	zinit:function()
+	{
+		this.size = cc.size(480, 500);
+		GAMESTARLAYOUT = this;//对本类的引用对象
+		//设置层的大小
+		this.setSize(this.size);
+		//将星星资源存放到数字中
+		this.starArr = [
+		                {id:1, normal:res.star1, selected:res.star1s},
+		                {id:2, normal:res.star2, selected:res.star2s},
+		                {id:3, normal:res.star3, selected:res.star3s},
+		                {id:4, normal:res.star4, selected:res.star4s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s}
+		                ];
+		for(var i = 0; i < 10; i++)
+		{
+			this.starObjArr.push([]);
+		}
+		//开启侦听器,逐侦监听
+		this.scheduleUpdate();
+		this.playerGameData = playerGameData;//给玩家信息定义一个新的实例
+		this.levelNumber = this.playerGameData.currentLevel;//玩家达到的关卡数
+		//获得当前关卡的星星个数
+		for(var i = 0; i < levelData.length; i++)
+		{
+			if(this.levelNumber == levelData[i].level)
+			{
+				this.starNum = levelData[i].starNumber-2;
+				break;
+			}
+		}
+	}
+});
+//实例化
+GameStarLayout.createLayout = function()
+{
+	var starLayout = new GameStarLayout();
+	return starLayout;
+};
+
+
+
+
+
+
+
+
+
+
+

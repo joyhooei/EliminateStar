@@ -1,0 +1,27 @@
+{
+    "project_type":"javascript",
+    "debugMode":1,
+    "showFPS":true,
+    "frameRate":60,
+    "id":"gameCanvas",
+    "renderMode":2,
+    "engineDir":"frameworks/cocos2d-html5",
+    "modules":[
+        "menus"
+    ],
+    "jsList":[
+        "src/resource.js",
+        "src/ClassUtil.js",
+        "src/Def.js",
+        "src/com/GameCreateStar.js",
+        "src/com/GameStarLayout.js",
+        "src/com/GameTopInformation.js",
+        "src/com/TransitionScene.js",
+        "src/com/GameHelpLayout.js",
+        "src/com/GameMainScene.js",
+        "src/com/LevelData.js",
+        "src/com/PlayerLocalData.js",
+        "src/com/GameInitializeScene.js",
+        "src/app.js"
+    ]
+}
