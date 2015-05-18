@@ -60,8 +60,3 @@ var myButton = function(texture)
 
 
 
-
-
-
-
-

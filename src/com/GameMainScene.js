@@ -1,4 +1,4 @@
-/*
+/**
  * 游戏主场景
  */
 var playerGameData;//玩家信息

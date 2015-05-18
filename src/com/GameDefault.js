@@ -1,5 +1,3 @@
-
-
 var Def = {
 		windowWidth:function(){//基础窗口宽度	int
 			return 480; 
