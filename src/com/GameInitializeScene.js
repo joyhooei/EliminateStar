@@ -3,8 +3,8 @@
  */
 var GameInitializeScene = ccui.Layout.extend(
 {
-	size:null,
-	isMusic:true,
+	size:null,//布局尺寸
+	isMusic:true,//是否播放背景音乐
 	ctor:function()
 	{
 		this._super();
@@ -47,7 +47,7 @@ var GameInitializeScene = ccui.Layout.extend(
 		maxScoreLabel.x = maxScore.x+(maxScore.width - maxScoreLabel.width)/2;
 		maxScoreLabel.y = maxScore.y;
 		this.addChild(maxScoreLabel, 2);
-		//声音喇叭
+		//声音喇叭按钮
 		var laba = new myButton(res.labaok);
 		laba.x = this.size.width - laba.width - 5;
 		laba.y = maxScore.y;
@@ -87,7 +87,7 @@ var GameInitializeScene = ccui.Layout.extend(
 	{
 		var gap = 10;
 		var a = 340-50, b = 275-50, c = 210-50, d = 145-50;
-		//新游戏
+		//新游戏按钮
 		var newGameBtn = new myButton(res.newgame);
 		var endX = this.size.width - newGameBtn.width >> 1;
 		var endY = this.size.height+100;
@@ -100,7 +100,7 @@ var GameInitializeScene = ccui.Layout.extend(
 		var easeOut1 = moveTo1.clone().easing(cc.easeElasticOut());
 		newGameBtn.runAction(easeOut1);
 		
-		//继续游戏
+		//继续游戏按钮
 		var continueGameBtn = new myButton(res.resume);
 		continueGameBtn.name = "continueGame";
 		continueGameBtn.x = endX;
@@ -112,7 +112,7 @@ var GameInitializeScene = ccui.Layout.extend(
 		continueGameBtn.runAction(easeOut2);
 		
 		
-		//帮助
+		//帮助按钮
 		var helpGameBtn = new myButton(res.help);
 		helpGameBtn.name = "helpGame";
 		helpGameBtn.x = endX;
@@ -123,7 +123,7 @@ var GameInitializeScene = ccui.Layout.extend(
 		var easeOut3 = moveTo3.clone().easing(cc.easeElasticOut());
 		helpGameBtn.runAction(easeOut3);
 		
-		//退出
+		//退出按钮
 		var exitGameBtn = new myButton(res.exit);
 		exitGameBtn.name = "exitGame";
 		exitGameBtn.x = endX;

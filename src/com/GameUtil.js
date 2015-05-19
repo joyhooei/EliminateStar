@@ -17,7 +17,7 @@ var yellow = cc.color.YELLOW;
 /*
  * 显示文本
  */
-var myText = function(str, color, fontSize)
+function myText(str, color, fontSize)
 {
 	var text = ccui.Text.create();
 	text.setText(str);
@@ -30,7 +30,7 @@ var myText = function(str, color, fontSize)
 /*
  * 图片
  */
-var myImage = function(source)
+function myImage(source)
 {
 	var image = ccui.ImageView.create();
 	image.loadTexture(source);
@@ -41,7 +41,7 @@ var myImage = function(source)
 /*
  * 按钮
  */
-var myButton = function(texture)
+function myButton(texture)
 {
 	var btn = ccui.Button.create();
 	btn.loadTextures(texture, "");
