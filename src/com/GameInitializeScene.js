@@ -4,7 +4,6 @@
 var GameInitializeScene = ccui.Layout.extend(
 {
 	size:null,//布局尺寸
-	isMusic:true,//是否播放背景音乐
 	ctor:function()
 	{
 		this._super();
@@ -142,7 +141,12 @@ var GameInitializeScene = ccui.Layout.extend(
 	//按钮监听函数
 	btnControlGameFunc:function(target, state)
 	{
-		if(state == ccui.Widget.TOUCH_ENDED)//当手指松开时响应
+		if ( state === ccui.Widget.TOUCH_BEGAN )
+		{
+			//播放按钮选中音效
+			Music.playSelected();
+		}
+		if( state === ccui.Widget.TOUCH_ENDED )//当手指松开时响应
 		{
 			switch (target.name)
 			{
@@ -168,18 +172,26 @@ var GameInitializeScene = ccui.Layout.extend(
 	//喇叭监听函数，控制游戏背景音乐
 	controlLabaFunc:function(target, state)
 	{
-		if(state == ccui.Widget.TOUCH_ENDED)//松开
+		if ( state === ccui.Widget.TOUCH_BEGAN )
 		{
-			if(this.isMusic)//设为静音
+			//播放按钮选中音效
+			Music.playSelected();
+		}
+		if( state === ccui.Widget.TOUCH_ENDED )
+		{
+			if( !Music.isMusic )
 			{
-				target.loadTextures(res.labano, "");
-				this.isMusic = false;
+				//开启系统音效
+				Music.isMusic = true;
+				Music.playFire();
+				target.loadTextures(res.labaok, "");
 			}
 			else	//播放音乐
 			{
-				target.loadTextures(res.labaok, "");
-				cc.audioEngine.stopMusic();
-				this.isMusic = true;
+				//关闭所有音效
+				target.loadTextures(res.labano, "");
+				Music.stopMusic();
+				Music.isMusic = false;
 			}
 		}
 	},
@@ -250,6 +262,20 @@ var GameInitializeScene = ccui.Layout.extend(
 		el.setPosition(cc.p(xx + 24,yy + 24));
 		return el;
 	},
+	//进入
+	onEnter:function()
+	{
+		this._super();
+		//播放爆竹音效
+		Music.playFire();
+	},
+	//预备离开
+	onExitTransitionDidStart:function()
+	{
+		this._super();
+		//关闭音效
+		Music.stopMusic();
+	}
 });
 
 //实例化场景

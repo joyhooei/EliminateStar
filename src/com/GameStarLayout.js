@@ -50,6 +50,7 @@ var GameStarLayout = ccui.Layout.extend(
 			{
 				this.firstTouchStar = target;
 				this.findSameColorStar(target);
+				Music.playClick();
 			}
 			else 	
 			{
@@ -59,6 +60,7 @@ var GameStarLayout = ccui.Layout.extend(
 					//将列表中的星星type还原
 					this.setStarListItemToNomal(this.starList);
 					this.findSameColorStar(target);
+					Music.playClick();
 				}
 				else	//第二次点击相连同色星星列表中的星星
 				{
@@ -67,6 +69,7 @@ var GameStarLayout = ccui.Layout.extend(
 						this.firstTouchStar = null;
 						this.getScore();
 						this.resetStarRow();
+						Music.playBroken();
 					}
 				}
 			}
@@ -79,10 +82,15 @@ var GameStarLayout = ccui.Layout.extend(
 		GAMETOP.updateGameScore(this.starList);
 	},
 	//当消灭星星后,如果上方还有星星存在,则要重新设置他们的row值,用于向下移动星星
-	resetStarRow:function()
+	resetStarRow:function()//TODO
 	{
 		for(var i = 0; i < this.starList.length; i++)
 		{
+			
+			var xx = this.starList[i].x, yy = this.starList[i].y, type = this.starList[i].type;
+			var sys = this.addExplosion(xx, yy, type, 20);
+			this.addChild(sys, 100);
+			
 			this.starList[i].type = -1;
 			this.starList[i].removeFromParent();
 			for(var j = this.starList[i].row+1; j< 10; j++)
@@ -347,7 +355,11 @@ var GameStarLayout = ccui.Layout.extend(
 	//按钮侦听函数
 	btnControlGameFunc:function(target, state)
 	{
-		if(state == ccui.Widget.TOUCH_ENDED)//松开
+		if ( state === ccui.Widget.TOUCH_BEGAN )
+		{
+			Music.playSelected();
+		}
+		if( state === ccui.Widget.TOUCH_ENDED )//松开
 		{
 			switch (target.name)
 			{
@@ -374,6 +386,56 @@ var GameStarLayout = ccui.Layout.extend(
 					break;
 			}
 		}
+	},
+	/**
+	 * 粒子系统爆炸效果
+	 * @param xx:X轴坐标
+	 * @param yy:Y轴坐标
+	 * @param type:星星类型
+	 * @param num:粒子数量（默认为50个）可选参数
+	 * @param gravity:粒子重力（默认为300）可选参数
+	 * @returns
+	 */
+	addExplosion:function(xx, yy, type, num, gravity)
+	{
+		//实例化一个带粒子数量的爆炸效果的粒子特效
+		var el = cc.ParticleExplosion.createWithTotalParticles((num ? num : 50));
+		gravity = gravity ? gravity : 300;
+		//生成粒子贴图纹理
+		switch ( type) 
+		{
+		case 0:
+			var textureCache = cc.textureCache.addImage(res.sp1);
+			break;
+
+		case 1:
+			var textureCache = cc.textureCache.addImage(res.sp2);
+			break;
+
+		case 2:
+			var textureCache = cc.textureCache.addImage(res.sp3);
+			break;
+
+		case 3:
+			var textureCache = cc.textureCache.addImage(res.sp4);
+			break;
+
+		case 4:
+			var textureCache = cc.textureCache.addImage(res.sp5);
+			break;
+
+		default:
+			var textureCache = cc.textureCache.addImage(res.sp4);
+		break;
+		}
+		//为粒子设置贴图纹理
+		el.setTexture(textureCache);
+		//设置粒子重力
+		el.setGravity(cc.p(0,-gravity));
+		//设置粒子移动速度
+		el.setSpeed(200);
+		el.setPosition(cc.p(xx + 24,yy + 24));
+		return el;
 	},
 	//初始化
 	zinit:function()

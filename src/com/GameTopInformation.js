@@ -155,6 +155,7 @@ var GameTopInformation = ccui.Layout.extend(
 	//过关特效显示
 	passedLevelEffect:function(str)
 	{
+		Music.playWin();
 		var win = new myImage(str);
 		win.setAnchorPoint(0.5, 0.5);
 		win.x = 480/2;

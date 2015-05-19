@@ -11,6 +11,8 @@ var TransitionScene = ccui.Layout.extend(
 		this.zinit();
 		this.setLabel();
 		this.gotoGameMainScene();
+		this.setParticleSys();//粒子特效
+		this.schedule(this.playExplosion, 1);//定时器、控制粒子特效的播放
 	},
 	//设置显示文本(当前关卡数,通过关卡分数)
 	setLabel:function()
@@ -39,7 +41,7 @@ var TransitionScene = ccui.Layout.extend(
 		{
 			var gMainScene = GameMainScene.createScene();
 			cc.director.runScene(cc.TransitionFade.create(1, gMainScene));
-		}, 2);
+		}, 4);
 	},
 	//初始化
 	zinit:function()
@@ -79,6 +81,83 @@ var TransitionScene = ccui.Layout.extend(
 				break;
 			}
 		}
+	},
+	//添加粒子特效是游戏更炫丽
+	setParticleSys:function()
+	{
+		this.playExplosion();
+	},
+	//粒子系统爆炸效果
+	playExplosion:function()
+	{
+		//随机设置粒子特效的位置，大概在场景的上半部分出现
+		var xx = (Math.random()*this.width - 40) + 20, yy = (Math.random()*this.height - 20) + this.height/3, type = Math.floor(Math.random()*5);
+		var sys = this.addExplosion(xx, yy, type, 80, 200);
+		this.addChild(sys, 100);
+		//这里一次实例化两个，看起来更加合理，更加不同审美可以自由设定一次性实例化数量
+		var xx = (Math.random()*this.width - 40) + 20, yy = (Math.random()*this.height - 20) + this.height/3, type = Math.floor(Math.random()*5);
+		var sys = this.addExplosion(xx, yy, type, 80, 200);
+		this.addChild(sys, 100);
+	},
+	/**
+	 * 粒子系统爆炸效果
+	 * @param xx:X轴坐标
+	 * @param yy:Y轴坐标
+	 * @param type:星星类型
+	 * @param num:粒子数量（默认为50个）可选参数
+	 * @param gravity:粒子重力（默认为300）可选参数
+	 * @returns
+	 */
+	addExplosion:function(xx, yy, type, num, gravity)
+	{
+		//实例化一个带粒子数量的爆炸效果的粒子特效
+		var el = cc.ParticleExplosion.createWithTotalParticles((num ? num : 50));
+		gravity = gravity ? gravity : 300;
+		//生成粒子贴图纹理
+		switch ( type) 
+		{
+		case 0:
+			var textureCache = cc.textureCache.addImage(res.sp1);
+			break;
+
+		case 1:
+			var textureCache = cc.textureCache.addImage(res.sp2);
+			break;
+
+		case 2:
+			var textureCache = cc.textureCache.addImage(res.sp3);
+			break;
+
+		case 3:
+			var textureCache = cc.textureCache.addImage(res.sp4);
+			break;
+
+		case 4:
+			var textureCache = cc.textureCache.addImage(res.sp5);
+			break;
+
+		default:
+			var textureCache = cc.textureCache.addImage(res.sp4);
+		break;
+		}
+		//为粒子设置贴图纹理
+		el.setTexture(textureCache);
+		//设置粒子重力
+		el.setGravity(cc.p(0,-gravity));
+		//设置粒子移动速度
+		el.setSpeed(200);
+		el.setPosition(cc.p(xx + 24,yy + 24));
+		return el;
+	},
+	onEnter:function()
+	{
+		this._super();
+		Music.playFire();
+	},
+	onExitTransitionDidStart:function()
+	{
+		this._super();
+		Music.stopMusic();
 	}
 });
 //实例化场景
