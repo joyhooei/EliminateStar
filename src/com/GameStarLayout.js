@@ -6,18 +6,60 @@
 var GAMESTARLAYOUT;
 var GameStarLayout = ccui.Layout.extend(
 {
-	size:null,
-	starArr:[],//存放点击与被点击状态的星星资源
-	starObjArr:[],//存放游戏中星星的二位数组
-	firstTouchStar:null,//第一次选择的星星,用于判断两次选择的星星颜色是否一致
-	isSelected:false,//是否选择星星,如果已选择则再次点击将星星消灭
-	starList:[],//相连同色星星列表
-	starNum:0,//当前关卡星星个数
 	ctor:function()
 	{
 		this._super();
+		this.setVariable();
 		this.zinit();
 		this.layoutStar();
+	},
+	setVariable:function()
+	{
+		this.size = cc.size(480, 500);
+		GAMESTARLAYOUT = this;//对本类的引用对象
+		this.starObjArr = [];//存放游戏中星星的二位数组
+		this.firstTouchStar = null;//第一次选择的星星,用于判断两次选择的星星颜色是否一致
+		this.isSelected = false;//是否选择星星,如果已选择则再次点击将星星消灭
+		this.starList = [];//相连同色星星列表
+		this.starNum = 0;//当前关卡星星个数
+		//将星星资源存放到数字中
+		this.starArr = [//存放点击与被点击状态的星星资源
+		                {id:1, normal:res.star1, selected:res.star1s},
+		                {id:2, normal:res.star2, selected:res.star2s},
+		                {id:3, normal:res.star3, selected:res.star3s},
+		                {id:4, normal:res.star4, selected:res.star4s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s},
+		                {id:5, normal:res.star5, selected:res.star5s}
+		                ];
+		for(var i = 0; i < 10; i++)
+		{
+			this.starObjArr.push([]);
+		}
+		//获得当前关卡的星星个数
+		for ( var i = 0; i < levelData.length; i++ )
+		{
+			if ( PlayerDate.level == levelData[i].level )
+			{
+				this.starNum = levelData[i].starNumber-2;
+				break;
+			}
+		}
+	},
+	//初始化
+	zinit:function()
+	{
+		//设置层的大小
+		this.setSize(this.size);
+		//开启侦听器,逐侦监听
+		this.scheduleUpdate();
 	},
 	//将星星按10*10的矩阵排列出来
 	layoutStar:function()
@@ -268,18 +310,21 @@ var GameStarLayout = ccui.Layout.extend(
 		}
 		return this.starObjArr[col][row].type;
 	},
-	//检测游戏结束当没有可以消除的星星时游戏宣布结束
+	//检测游戏是否结束，当没有可以消除的星星时游戏宣布结束
 	checkGameOver:function()
 	{
 		//遍历所有的星星
-		for(var i = 0; i < 10; i++)
+		for( var i = 0; i < 10; i++ )
 		{
-			for(var j = 0; j < 10; j++)
+			for( var j = 0; j < 10; j++ )
 			{
 				var starType = this.jugementStarPostion(i, j);
-				if(starType == -1){continue;}//不存在星星,则继续下一次循环(当starType =-1时表示该位置没有星星)
-				if(starType == this.jugementStarPostion(i, j+1)){return;}//同理
-				if(starType == this.jugementStarPostion(i+1, j)){return;}//当相邻有相同颜色星星时还回(因为是遍历每一个星星,所以水平方向只需要检测星星相邻右侧是否有相同颜色的就可以了)
+				//不存在星星,则继续下一次循环(当starType =-1时表示该位置没有星星)
+				if( starType == -1 ){continue;}
+				//同理
+				if( starType == this.jugementStarPostion(i, j+1) ){return;}
+				//当相邻有相同颜色星星时还回(因为是遍历每一个星星,所以水平方向只需要检测星星相邻右侧是否有相同颜色的就可以了)
+				if( starType == this.jugementStarPostion(i+1, j) ){return;}
 			}
 		}
 		//当没有相同颜色的星星时,宣布游戏结束
@@ -289,15 +334,15 @@ var GameStarLayout = ccui.Layout.extend(
 	endGame:function()
 	{
 		//未通关,还回游戏初始界面
-		if(!GAMETOP.isPause)//非暂停状态下判断游戏是否结束
+		if( !GAMETOP.isPause )//非暂停状态下判断游戏是否结束
 		{
-			if(GAMETOP.scoreNumber < GAMETOP.standardScore)
+			if( GAMETOP.score < GAMETOP.sScore )
 			{
+				//播放通关失败特效
 				GAMETOP.passedLevelEffect(res.fail);
 				var delayTime = cc.DelayTime.create(2.2);
 				var callFunc = cc.CallFunc.create(function()
 				{
-					PlayerLocalData.deleteItem();//删除游戏纪录
 					var newGameScene = GameInitializeScene.createScene();
 					cc.director.runScene(cc.TransitionFade.create(1, newGameScene));
 				}, this);
@@ -319,19 +364,14 @@ var GameStarLayout = ccui.Layout.extend(
 		this.layout = ccui.Layout.create();
 		this.layout.setSize(Def.windowSize());
 		this.parent.addChild(this.layout, 50);
-		var layerColor = cc.LayerColor.create();
+		var layerColor = cc.LayerColor.create(), endX = 240, endY = 850, b = 400, c = 330;
 		layerColor.setColor(cc.color(0, 0, 0, 155));
 		this.layout.addChild(layerColor, 0);
-		var endX = 240;
-		var endY = 850;
-		var b = 400;
-		var c = 330;
 		//继续游戏
 		var continueGameBtn = new myButton(res.resume);
 		continueGameBtn.setAnchorPoint(0.5, 0.5);
 		continueGameBtn.name = "continueGame";
-		continueGameBtn.x = endX;
-		continueGameBtn.y = endY
+		continueGameBtn.setPosition(cc.p(endX, endY));
 		this.layout.addChild(continueGameBtn, 1);
 		//action2
 		var moveTo2 = cc.MoveTo.create(4, cc.p(endX, b));
@@ -341,8 +381,7 @@ var GameStarLayout = ccui.Layout.extend(
 		var saveAndOut = new myButton("img/saveexit.png");
 		saveAndOut.setAnchorPoint(0.5, 0.5);
 		saveAndOut.name = "save";
-		saveAndOut.x = endX;
-		saveAndOut.y = endY;
+		saveAndOut.setPosition(cc.p(endX, endY));
 		this.layout.addChild(saveAndOut, 1);
 		//action3
 		var moveTo3 = cc.MoveTo.create(3, cc.p(endX, c));
@@ -359,25 +398,26 @@ var GameStarLayout = ccui.Layout.extend(
 		{
 			Music.playSelected();
 		}
-		if( state === ccui.Widget.TOUCH_ENDED )//松开
+		if( state === ccui.Widget.TOUCH_ENDED )
 		{
 			switch (target.name)
 			{
 				case "continueGame"://继续游戏
-					if(GAMETOP.isPause)//暂停状态,还回继续游戏
+					if( GAMETOP.isPause )//暂停状态,还回继续游戏
 					{
 						GAMETOP.isPause = false;
 						this.layout.removeFromParent();
 					}
 					else
 					{
+						GAMETOP.onExitt();
 						var newGameScene = TransitionScene.createScene(false);
 						cc.director.runScene(cc.TransitionFade.create(1, newGameScene));
-						cc.log("newGame");
 					}
 					break;
 						
 				case "save"://保存退出
+					GAMETOP.onExitt();
 					var newGameScene = GameInitializeScene.createScene();
 					cc.director.runScene(cc.TransitionFade.create(1, newGameScene));
 					break;
@@ -436,48 +476,6 @@ var GameStarLayout = ccui.Layout.extend(
 		el.setSpeed(200);
 		el.setPosition(cc.p(xx + 24,yy + 24));
 		return el;
-	},
-	//初始化
-	zinit:function()
-	{
-		this.size = cc.size(480, 500);
-		GAMESTARLAYOUT = this;//对本类的引用对象
-		//设置层的大小
-		this.setSize(this.size);
-		//将星星资源存放到数字中
-		this.starArr = [
-		                {id:1, normal:res.star1, selected:res.star1s},
-		                {id:2, normal:res.star2, selected:res.star2s},
-		                {id:3, normal:res.star3, selected:res.star3s},
-		                {id:4, normal:res.star4, selected:res.star4s},
-		                {id:5, normal:res.star5, selected:res.star5s},
-		                {id:5, normal:res.star5, selected:res.star5s},
-		                {id:5, normal:res.star5, selected:res.star5s},
-		                {id:5, normal:res.star5, selected:res.star5s},
-		                {id:5, normal:res.star5, selected:res.star5s},
-		                {id:5, normal:res.star5, selected:res.star5s},
-		                {id:5, normal:res.star5, selected:res.star5s},
-		                {id:5, normal:res.star5, selected:res.star5s},
-		                {id:5, normal:res.star5, selected:res.star5s},
-		                {id:5, normal:res.star5, selected:res.star5s}
-		                ];
-		for(var i = 0; i < 10; i++)
-		{
-			this.starObjArr.push([]);
-		}
-		//开启侦听器,逐侦监听
-		this.scheduleUpdate();
-		this.playerGameData = playerGameData;//给玩家信息定义一个新的实例
-		this.levelNumber = this.playerGameData.currentLevel;//玩家达到的关卡数
-		//获得当前关卡的星星个数
-		for(var i = 0; i < levelData.length; i++)
-		{
-			if(this.levelNumber == levelData[i].level)
-			{
-				this.starNum = levelData[i].starNumber-2;
-				break;
-			}
-		}
 	}
 });
 //实例化

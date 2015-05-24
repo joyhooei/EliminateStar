@@ -9,39 +9,11 @@ var TransitionScene = ccui.Layout.extend(
 		this._super();
 		this.isNewGame = isNewGame;
 		this.zinit();
+		this.setVisible();
 		this.setLabel();
 		this.gotoGameMainScene();
 		this.setParticleSys();//粒子特效
 		this.schedule(this.playExplosion, 1);//定时器、控制粒子特效的播放
-	},
-	//设置显示文本(当前关卡数,通过关卡分数)
-	setLabel:function()
-	{
-		//当前进入关卡
-		var currentLevel = new myText("level "+this.levelNumber.toString(),white, 20);
-		currentLevel.x = this.size.width - currentLevel.width >> 1;//居中
-		currentLevel.y = 500;
-		this.addChild(currentLevel, 1);
-		
-		var targetTxt = new myText("target score is", white, 20);
-		targetTxt.x = this.size.width - targetTxt.width >> 1;
-		targetTxt.y = currentLevel.y - targetTxt.height - 10;
-		this.addChild(targetTxt, 1);
-		//通关分数
-		var targetScore = new myText(this.standardScore.toString(), white, 20);
-		targetScore.x = this.size.width - targetScore.width >> 1;
-		targetScore.y = targetTxt.y - targetScore.height - 10;
-		this.addChild(targetScore, 1);
-	},
-	//进入游戏主场景
-	gotoGameMainScene:function()
-	{
-		//两秒后进入游戏主界面
-		this.scheduleOnce(function()
-		{
-			var gMainScene = GameMainScene.createScene();
-			cc.director.runScene(cc.TransitionFade.create(1, gMainScene));
-		}, 4);
 	},
 	//初始化
 	zinit:function()
@@ -55,32 +27,67 @@ var TransitionScene = ccui.Layout.extend(
 		this.addChild(backGround, 0);
 		var backGround1 = new myImage(res.mainbackbottom);
 		this.addChild(backGround1, 0);
-		
+
 		//初始化玩家信息
 		if(this.isNewGame == true)
 		{
-			PlayerLocalData.deleteItem();
+			PlayerDate.level = 1;
+			PlayerDate.score = 0;
+//			PlayerLocalData.deleteItem();
 		}
-		this.playerGameData = PlayerLocalData.getItem();
+//		this.playerGameData = PlayerLocalData.getItem();
 		//这里要注意,第一次进入游戏时,this.playerGameData是一个数组,之后就变成对象了,这里确保游戏中统一用对象
-		if(this.playerGameData.length == true)
-		{
-			this.playerGameData = this.playerGameData[0];
-		}
-		else
-		{
-			this.playerGameData = this.playerGameData;
-		}
-		this.levelNumber = this.playerGameData.currentLevel;//当前关卡数字
+//		if(this.playerGameData.length == true)
+//		{
+//			this.playerGameData = this.playerGameData[0];
+//		}
+//		else
+//		{
+//			this.playerGameData = this.playerGameData;
+//		}
+//		this.levelNumber = this.playerGameData.currentLevel;//当前关卡数字
+	},
+	setVisible:function()
+	{
+		this.level = PlayerDate.level;//当前关卡
 		//获得当前关卡的目标分数
 		for(var i = 0; i < levelData.length; i++)
 		{
-			if(this.levelNumber == levelData[i].level)
+			if(this.level == levelData[i].level)
 			{
-				this.standardScore = levelData[i].standards;
+				this.sScore = levelData[i].standards;
 				break;
 			}
 		}
+	},
+	//设置显示文本(当前关卡数,通过关卡分数)
+	setLabel:function()
+	{
+		//当前进入关卡
+		var currentLevel = new myText("level "+this.level.toString(),white, 20);
+		currentLevel.x = this.size.width - currentLevel.width >> 1;//居中
+		currentLevel.y = 500;
+		this.addChild(currentLevel, 1);
+		
+		var targetTxt = new myText("target score is", white, 20);
+		targetTxt.x = this.size.width - targetTxt.width >> 1;
+		targetTxt.y = currentLevel.y - targetTxt.height - 10;
+		this.addChild(targetTxt, 1);
+		//通关分数
+		var targetScore = new myText(this.sScore.toString(), white, 20);
+		targetScore.x = this.size.width - targetScore.width >> 1;
+		targetScore.y = targetTxt.y - targetScore.height - 10;
+		this.addChild(targetScore, 1);
+	},
+	//进入游戏主场景
+	gotoGameMainScene:function()
+	{
+		//两秒后进入游戏主界面
+		this.scheduleOnce(function()
+		{
+			var gMainScene = GameMainScene.createScene();
+			cc.director.runScene(cc.TransitionFade.create(1, gMainScene));
+		}, 4);
 	},
 	//添加粒子特效是游戏更炫丽
 	setParticleSys:function()
