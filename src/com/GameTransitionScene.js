@@ -3,16 +3,61 @@
  */
 var TransitionScene = ccui.Layout.extend(
 {
-	size:null,
 	ctor:function(isNewGame)
 	{
 		this._super();
-		this.isNewGame = isNewGame;
-		this.zinit();
-		this.setLabel();
-		this.gotoGameMainScene();
+		this.variable(isNewGame);//属性初始化
+		this.zinit();//初始化
+		this.setLabel();//设置显示文本(当前关卡数,通过关卡分数)
+		this.gotoGameMainScene();//进入游戏主场景
 		this.setParticleSys();//粒子特效
 		this.schedule(this.playExplosion, 1);//定时器、控制粒子特效的播放
+	},
+	//属性初始化
+	variable:function(isNewGame)
+	{
+		this.isNewGame = isNewGame;//是否为新游戏，如果是则初始化玩家信息，从初始玩起
+		this.size = Def.windowSize();//布局尺寸
+		this.playerGameData = null;//玩家数据
+		this.levelNumber = 0;//当前关卡
+		this.standardScore = 0;//当前关卡目标分数
+	},
+	//初始化
+	zinit:function()
+	{
+		//设置布局大小
+		this.setSize(this.size);
+		//实例化背景图片
+		var backGround = new myImage(res.mainbacktop);
+		backGround.y = this.size.height - backGround.height;
+		this.addChild(backGround, 0);
+		var backGround1 = new myImage(res.mainbackbottom);
+		this.addChild(backGround1, 0);
+		//初始化玩家信息
+		if( this.isNewGame == true )
+		{
+			PlayerLocalData.deleteItem();
+		}
+		this.playerGameData = PlayerLocalData.getItem();
+		//这里要注意,第一次进入游戏时,this.playerGameData是一个数组,之后就变成对象了,这里确保游戏中统一用对象
+		if( this.playerGameData.length == true )
+		{
+			this.playerGameData = this.playerGameData[0];
+		}
+		else
+		{
+			this.playerGameData = this.playerGameData;
+		}
+		this.levelNumber = this.playerGameData.currentLevel;//当前关卡数字
+		//获得当前关卡的目标分数
+		for( var i = 0; i < levelData.length; i++ )
+		{
+			if( this.levelNumber == levelData[i].level )
+			{
+				this.standardScore = levelData[i].standards;
+				break;
+			}
+		}
 	},
 	//设置显示文本(当前关卡数,通过关卡分数)
 	setLabel:function()
@@ -36,51 +81,12 @@ var TransitionScene = ccui.Layout.extend(
 	//进入游戏主场景
 	gotoGameMainScene:function()
 	{
-		//两秒后进入游戏主界面
+		//延时后进入游戏主界面
 		this.scheduleOnce(function()
 		{
 			var gMainScene = GameMainScene.createScene();
 			cc.director.runScene(cc.TransitionFade.create(1, gMainScene));
 		}, 4);
-	},
-	//初始化
-	zinit:function()
-	{
-		//设置布局大小
-		this.size = cc.size(480, 800);
-		this.setSize(this.size);
-		//实例化背景图片
-		var backGround = new myImage(res.mainbacktop);
-		backGround.y = this.size.height - backGround.height;
-		this.addChild(backGround, 0);
-		var backGround1 = new myImage(res.mainbackbottom);
-		this.addChild(backGround1, 0);
-		
-		//初始化玩家信息
-		if(this.isNewGame == true)
-		{
-			PlayerLocalData.deleteItem();
-		}
-		this.playerGameData = PlayerLocalData.getItem();
-		//这里要注意,第一次进入游戏时,this.playerGameData是一个数组,之后就变成对象了,这里确保游戏中统一用对象
-		if(this.playerGameData.length == true)
-		{
-			this.playerGameData = this.playerGameData[0];
-		}
-		else
-		{
-			this.playerGameData = this.playerGameData;
-		}
-		this.levelNumber = this.playerGameData.currentLevel;//当前关卡数字
-		//获得当前关卡的目标分数
-		for(var i = 0; i < levelData.length; i++)
-		{
-			if(this.levelNumber == levelData[i].level)
-			{
-				this.standardScore = levelData[i].standards;
-				break;
-			}
-		}
 	},
 	//添加粒子特效是游戏更炫丽
 	setParticleSys:function()

@@ -8,21 +8,8 @@ var GameMainScene = ccui.Layout.extend(
 	{
 		this._super();
 		this.zinit();
-		this.setTopInfor();
-		this.addStarLayout();
-	},
-	//游戏主场景顶部显示信息
-	setTopInfor:function()
-	{
-		var gameTopInfo = new GameTopInformation();
-		gameTopInfo.y = this.size.height - gameTopInfo.height;
-		this.addChild(gameTopInfo, 1);
-	},
-	//将星星层添加到主场景
-	addStarLayout:function()
-	{
-		var starLayout = GameStarLayout.createLayout();
-		this.addChild(starLayout, 1);
+		this.setTopInfor();//游戏主场景顶部显示信息
+		this.addStarLayout();//将星星层添加到主场景
 	},
 	//初始化
 	zinit:function()
@@ -36,6 +23,19 @@ var GameMainScene = ccui.Layout.extend(
 		this.addChild(backGround, 0);
 		var backGround1 = new myImage(res.mainbackbottom);
 		this.addChild(backGround1, 0);
+	},
+	//游戏主场景顶部显示信息
+	setTopInfor:function()
+	{
+		var gameTopInfo = new GameTopInformation();
+		gameTopInfo.y = this.size.height - gameTopInfo.height;
+		this.addChild(gameTopInfo, 1);
+	},
+	//将星星层添加到主场景
+	addStarLayout:function()
+	{
+		var starLayout = GameStarLayout.createLayout();
+		this.addChild(starLayout, 1);
 	}
 });
 

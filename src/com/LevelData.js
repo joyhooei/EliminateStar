@@ -4,7 +4,7 @@
  */
 var levelData = 
 [
- {level:1, standards:1000, starNumber:10},
+ {level:1, standards:1000, starNumber:6},
  {level:2, standards:3000, starNumber:6},
  {level:3, standards:19000, starNumber:6},
  {level:4, standards:21000, starNumber:6},

@@ -4,31 +4,64 @@
 var GAMETOP;
 var GameTopInformation = ccui.Layout.extend(
 {
-	size:null,
-	isPause:false,//是否暂停游戏
-	maxScoreLabel:null,//最高纪录
-	getScoreNum:null,//当前得分
-	currentLevel:null,//当前关卡
-	isPassed:false,//是否通过关卡
 	ctor:function()
 	{
 		this._super();
-		this.zinit();
-		this.setInformation();
+		this.variable();//属性初始化
+		this.zinit();//初始化
+		this.setInformation();//信息设置
+	},
+	//属性初始化
+	variable:function()
+	{
+		this.size = cc.size(480, 300);//布局尺寸
+		this.isPause = false;//是否暂停游戏
+		this.maxScore = 0;//游戏最高得分
+		this.maxScoreLabel = null;//最高纪录
+		this.getScoreNum = 0;//当前得分
+		this.currentLevel = 0;//当前关卡
+		this.isPassed = false;//是否通过关卡
+		this.playerGameData = null;//玩家数据
+		this.playerLevel = 0;//关卡
+	},
+	//初始化
+	zinit:function()
+	{
+		GAMETOP = this;
+		this.setSize(this.size);
+		this.playerGameData = playerGameData;//给玩家信息定义一个新的实例
+		this.levelNumber = this.playerGameData.currentLevel;
+		this.intermediaryScore = 0;//当前分数与本次获得的分数之和
+		this.tempScore = 0;//本次消除获得的分数
+		this.maxScore = this.playerGameData.maxScore;//游戏最高得分
+		this.scoreNumber = this.playerGameData.gameScore;//游戏界面显示的分数
+		this.playerLevel = this.playerGameData.currentLevel;//关卡
+		//获得当前关卡的目标分数
+		for(var i = 0; i < levelData.length; i++)
+		{
+			if(this.levelNumber == levelData[i].level)
+			{
+				this.standardScore = levelData[i].standards;
+				break;
+			}
+		}
 	},
 	//信息设置
 	setInformation:function()
 	{
+		//最高纪录图片
 		var maxRecord = new myImage(res.maxrecord);
 		maxRecord.x = 10;
 		maxRecord.y = this.size.height - maxRecord.height - 20;
 		this.addChild(maxRecord, 1);
 
+		//最高纪录图片
 		var maxScore = new myImage(res.maxscore);
 		maxScore.x = maxRecord.x + maxRecord.width + 30;
 		maxScore.y = maxRecord.y;
 		this.addChild(maxScore, 1);
 
+		//最高得分文本
 		this.maxScoreLabel = new myText(this.maxScore.toString(), white, 26);
 		this.maxScoreLabel.x = maxScore.x+(maxScore.width - this.maxScoreLabel.width)/2;
 		this.maxScoreLabel.y = maxScore.y;
@@ -193,29 +226,6 @@ var GameTopInformation = ccui.Layout.extend(
 			var callFunc = cc.CallFunc.create(function(){effect.removeFromParent()}, this);
 			var sequence = cc.sequence(spawn, fadeOut, callFunc);
 			effect.runAction(sequence);
-		}
-	},
-	//初始化
-	zinit:function()
-	{
-		GAMETOP = this;
-		this.playerGameData = playerGameData;//给玩家信息定义一个新的实例
-		this.levelNumber = this.playerGameData.currentLevel;
-		this.intermediaryScore = 0;//当前分数与本次获得的分数之和
-		this.tempScore = 0;//本次消除获得的分数
-		this.maxScore = this.playerGameData.maxScore;//游戏最高得分
-		this.scoreNumber = this.playerGameData.gameScore;//游戏界面显示的分数
-		this.playerLevel = this.playerGameData.currentLevel;//关卡
-		this.size = cc.size(480, 300);
-		this.setSize(this.size);
-		//获得当前关卡的目标分数
-		for(var i = 0; i < levelData.length; i++)
-		{
-			if(this.levelNumber == levelData[i].level)
-			{
-				this.standardScore = levelData[i].standards;
-				break;
-			}
 		}
 	},
 	//离开场景调用的方法
