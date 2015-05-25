@@ -6,7 +6,7 @@ var TransitionScene = ccui.Layout.extend(
 	ctor:function(isNewGame)
 	{
 		this._super();
-		this.variable(isNewGame);//属性初始化
+		this.setVisible(isNewGame);//属性初始化
 		this.zinit();//初始化
 		this.setLabel();//设置显示文本(当前关卡数,通过关卡分数)
 		this.gotoGameMainScene();//进入游戏主场景
@@ -14,18 +14,26 @@ var TransitionScene = ccui.Layout.extend(
 		this.schedule(this.playExplosion, 1);//定时器、控制粒子特效的播放
 	},
 	//属性初始化
-	variable:function(isNewGame)
+	setVisible:function(isNewGame)
 	{
 		this.isNewGame = isNewGame;//是否为新游戏，如果是则初始化玩家信息，从初始玩起
 		this.size = Def.windowSize();//布局尺寸
-		this.playerGameData = null;//玩家数据
-		this.levelNumber = 0;//当前关卡
-		this.standardScore = 0;//当前关卡目标分数
+		this.level = PlayerDate.level;//当前关卡
+		//获得当前关卡的目标分数
+		for(var i = 0; i < levelData.length; i++)
+		{
+			if(this.level == levelData[i].level)
+			{
+				this.sScore = levelData[i].standards;
+				break;
+			}
+		}
 	},
 	//初始化
 	zinit:function()
 	{
 		//设置布局大小
+		this.size = cc.size(480, 800);
 		this.setSize(this.size);
 		//实例化背景图片
 		var backGround = new myImage(res.mainbacktop);
@@ -33,37 +41,31 @@ var TransitionScene = ccui.Layout.extend(
 		this.addChild(backGround, 0);
 		var backGround1 = new myImage(res.mainbackbottom);
 		this.addChild(backGround1, 0);
+
 		//初始化玩家信息
-		if( this.isNewGame == true )
+		if(this.isNewGame == true)
 		{
-			PlayerLocalData.deleteItem();
+			PlayerDate.level = 1;
+			PlayerDate.score = 0;
+//			PlayerLocalData.deleteItem();
 		}
-		this.playerGameData = PlayerLocalData.getItem();
+//		this.playerGameData = PlayerLocalData.getItem();
 		//这里要注意,第一次进入游戏时,this.playerGameData是一个数组,之后就变成对象了,这里确保游戏中统一用对象
-		if( this.playerGameData.length == true )
-		{
-			this.playerGameData = this.playerGameData[0];
-		}
-		else
-		{
-			this.playerGameData = this.playerGameData;
-		}
-		this.levelNumber = this.playerGameData.currentLevel;//当前关卡数字
-		//获得当前关卡的目标分数
-		for( var i = 0; i < levelData.length; i++ )
-		{
-			if( this.levelNumber == levelData[i].level )
-			{
-				this.standardScore = levelData[i].standards;
-				break;
-			}
-		}
+//		if(this.playerGameData.length == true)
+//		{
+//			this.playerGameData = this.playerGameData[0];
+//		}
+//		else
+//		{
+//			this.playerGameData = this.playerGameData;
+//		}
+//		this.levelNumber = this.playerGameData.currentLevel;//当前关卡数字
 	},
 	//设置显示文本(当前关卡数,通过关卡分数)
 	setLabel:function()
 	{
 		//当前进入关卡
-		var currentLevel = new myText("level "+this.levelNumber.toString(),white, 20);
+		var currentLevel = new myText("level "+this.level.toString(),white, 20);
 		currentLevel.x = this.size.width - currentLevel.width >> 1;//居中
 		currentLevel.y = 500;
 		this.addChild(currentLevel, 1);
@@ -73,7 +75,7 @@ var TransitionScene = ccui.Layout.extend(
 		targetTxt.y = currentLevel.y - targetTxt.height - 10;
 		this.addChild(targetTxt, 1);
 		//通关分数
-		var targetScore = new myText(this.standardScore.toString(), white, 20);
+		var targetScore = new myText(this.sScore.toString(), white, 20);
 		targetScore.x = this.size.width - targetScore.width >> 1;
 		targetScore.y = targetTxt.y - targetScore.height - 10;
 		this.addChild(targetScore, 1);

@@ -8,6 +8,7 @@ cc.game.onStart = function()
     cc.LoaderScene.preload(g_resources, function () 
     {
     	cc.director.runScene(GameInitializeScene.createScene());
+//    	cc.director.runScene(GameMainScene.createScene());
     }, this);
 };
 cc.game.run();
