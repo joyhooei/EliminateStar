@@ -17,7 +17,7 @@ var GameInitializeScene = ccui.Layout.extend(
 	//基本属性设置
 	setVariable:function()
 	{
-		PlayerDate = PlayerLocalData.getItem();
+		PlayerDate = PlayerLocalData.getItem();//从本地读取数据
 		this.maxScore = PlayerDate.mScore;//游戏最高得分
 	},
 	//初始化函数
@@ -136,7 +136,7 @@ var GameInitializeScene = ccui.Layout.extend(
 		var moveTo4 = cc.MoveTo.create(2, cc.p(endX, d));
 		var easeOut4 = moveTo4.clone().easing(cc.easeElasticOut());
 		exitGameBtn.runAction(easeOut4);
-		
+		//为按钮注册监听器
 		newGameBtn.addTouchEventListener(this.btnControlGameFunc, this);
 		continueGameBtn.addTouchEventListener(this.btnControlGameFunc, this);
 		helpGameBtn.addTouchEventListener(this.btnControlGameFunc, this);

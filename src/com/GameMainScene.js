@@ -1,7 +1,6 @@
 /**
  * 游戏主场景
  */
-var playerGameData;//玩家信息
 var GameMainScene = ccui.Layout.extend(
 {
 	ctor:function()
@@ -39,7 +38,7 @@ var GameMainScene = ccui.Layout.extend(
 	}
 });
 
-
+//实例化场景
 GameMainScene.createScene = function()
 {
 	var gameLayout = new GameMainScene();
