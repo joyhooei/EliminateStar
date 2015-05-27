@@ -1,8 +1,8 @@
 obj/local/armeabi/objs-debug/cocos2dx_static/2d/CCGLBufferedNode.o: \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./2d/CCGLBufferedNode.cpp \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./2d/CCGLBufferedNode.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./platform/android/CCGL.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/CCPlatformConfig.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./2d/CCGLBufferedNode.cpp \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./2d/CCGLBufferedNode.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./platform/android/CCGL.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/CCPlatformConfig.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/GLES2/gl2platform.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/KHR/khrplatform.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs.h \
@@ -14,11 +14,11 @@ obj/local/armeabi/objs-debug/cocos2dx_static/2d/CCGLBufferedNode.o: \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/GLES2/gl2.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/GLES2/gl2ext.h
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./2d/CCGLBufferedNode.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./2d/CCGLBufferedNode.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./platform/android/CCGL.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./platform/android/CCGL.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/CCPlatformConfig.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/CCPlatformConfig.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/GLES2/gl2platform.h:
 

@@ -5,7 +5,7 @@ cc.game.onStart = function()
     cc.view.setDesignResolutionSize(ww, hh, cc.ResolutionPolicy.SHOW_ALL);
 	cc.view.resizeWithBrowserSize(true);
     //load resources
-    cc.LoaderScene.preload(g_resources, function () 
+    cc.LoaderScene.preload(g_resources, function ()   
     {
     	cc.director.runScene(GameInitializeScene.createScene());
 //    	cc.director.runScene(GameMainScene.createScene());

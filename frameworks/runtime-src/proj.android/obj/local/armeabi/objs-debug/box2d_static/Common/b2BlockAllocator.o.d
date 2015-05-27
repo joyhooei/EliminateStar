@@ -1,7 +1,7 @@
 obj/local/armeabi/objs-debug/box2d_static/Common/b2BlockAllocator.o: \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/Common/b2BlockAllocator.cpp \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2BlockAllocator.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/Common/b2BlockAllocator.cpp \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2BlockAllocator.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/assert.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -17,9 +17,9 @@ obj/local/armeabi/objs-debug/box2d_static/Common/b2BlockAllocator.o: \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/string.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/malloc.h
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2BlockAllocator.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2BlockAllocator.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/assert.h:
 

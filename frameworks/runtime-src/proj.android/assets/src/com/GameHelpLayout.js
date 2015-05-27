@@ -1,5 +1,5 @@
-/*
- * @游戏帮助说明，该帮助场景只包含一张附有说明文字的背景图和一个还回按钮，非常的简单
+/**
+ * @游戏帮助说明,该帮助场景只包含一张附有说明文字的背景图和一个还回按钮
  */
 var GameHelpLayout = ccui.Layout.extend(
 {
@@ -18,10 +18,14 @@ var GameHelpLayout = ccui.Layout.extend(
 		this.addChild(backButton, 1);
 		backButton.addTouchEventListener(this.backButtonFunc, this);
 	},
-	//
+	//按钮监听器
 	backButtonFunc:function(target,state)
 	{
-		if(state == ccui.Widget.TOUCH_ENDED)
+		if ( state === ccui.Widget.TOUCH_BEGAN )
+		{
+			Music.playSelected();
+		}
+		if( state === ccui.Widget.TOUCH_ENDED )
 		{
 			var newGameScene = GameInitializeScene.createScene();
 			cc.director.runScene(cc.TransitionFade.create(1, newGameScene));
@@ -29,12 +33,12 @@ var GameHelpLayout = ccui.Layout.extend(
 	},
 	zinit:function()
 	{
-		this.setSize(cc.size(480, 800));
+		this.setSize(Def.windowSize());
 		var bg = new myImage(res.helpbg);
 		this.addChild(bg, 0);
 	}
 });
-
+//实例化场景
 GameHelpLayout.createScene = function()
 {
 	var layout = new GameHelpLayout();

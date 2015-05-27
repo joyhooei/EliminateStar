@@ -1,7 +1,7 @@
 obj/local/armeabi/objs/cocos2dx_static/__/external/unzip/ioapi.o: \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/unzip/ioapi.cpp \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/unzip/ioapi.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/CCPlatformConfig.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/unzip/ioapi.cpp \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/unzip/ioapi.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/CCPlatformConfig.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/stdio.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/cdefs.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -27,9 +27,9 @@ obj/local/armeabi/objs/cocos2dx_static/__/external/unzip/ioapi.o: \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/zlib.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/zconf.h
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/unzip/ioapi.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/unzip/ioapi.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/CCPlatformConfig.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/CCPlatformConfig.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/stdio.h:
 

@@ -4,13 +4,13 @@
 var GameCreateStar = ccui.ImageView.extend(
 {
 	type:0,//星星的类型(不同数字代表不同颜色的星星);
-	normalType:null,//星星的类型(不同数字代表不同颜色的星星);主要作用是当两次选择的星星列表不一样时,还原初始type值
+	normalType:null,//初始星星的类型(不同数字代表不同颜色的星星);主要作用是当两次选择的星星列表不一样时,还原初始type值,扮演一个中介者的角色
 	isSelected:false,//是否选中
 	col:null,//水平方向排列位置(0-9)
 	row:null,//竖直方向排列位置(0-9)
-	normal:null,//通常状态图片纹理
+	normal:null,//未选中状态图片纹理
 	selected:null,//选中状态图片纹理
-	count:0,//纪录当前选中次数,主要作用是当选择好要消除的星星后,实现再点一次则消灭星星
+	count:0,//纪录当前星星选中次数,如果第一次选中的同色星星数大于1，则在一次点击就消除
 	ctor:function(normal, type, selected, col, row)
 	{
 		this.type = type;
@@ -28,10 +28,12 @@ var GameCreateStar = ccui.ImageView.extend(
 	{
 		if(this.isSelected)
 		{
+			//加载选中状态图片纹理
 			this.loadTexture(this.selected);
 		}
 		else
 		{
+			//加载未选中状态图片纹理
 			this.loadTexture(this.normal);
 		}
 	}

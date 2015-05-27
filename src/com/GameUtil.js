@@ -61,7 +61,7 @@ Music.isMusic = true;
 Music.playFire = function()
 {
 	if ( !this.isMusic ){return;}
-	cc.audioEngine.playMusic("music/fire.mp3", true);
+	cc.audioEngine.playMusic("res/music/fire.mp3", true);
 };
 
 /**
@@ -70,7 +70,7 @@ Music.playFire = function()
 Music.playBroken = function()
 {
 	if ( !this.isMusic ){return;}
-	cc.audioEngine.playEffect("music/broken.mp3", false);
+	cc.audioEngine.playEffect("res/music/broken.mp3", false);
 };
 
 /**
@@ -79,7 +79,7 @@ Music.playBroken = function()
 Music.playClick = function()
 {
 	if ( !this.isMusic ){return;}
-	cc.audioEngine.playEffect("music/click.mp3", false);
+	cc.audioEngine.playEffect("res/music/click.mp3", false);
 };
 
 /**
@@ -88,7 +88,7 @@ Music.playClick = function()
 Music.playSelected = function()
 {
 	if ( !this.isMusic ){return;}
-	cc.audioEngine.playEffect("music/select.mp3", false);
+	cc.audioEngine.playEffect("res/music/select.mp3", false);
 };
 
 /**
@@ -97,7 +97,7 @@ Music.playSelected = function()
 Music.playStageClear = function()
 {
 	if ( !this.isMusic ){return;}
-	cc.audioEngine.playEffect("music/stageclear.mp3", false);
+	cc.audioEngine.playEffect("res/music/stageclear.mp3", false);
 };
 
 /**
@@ -106,7 +106,7 @@ Music.playStageClear = function()
 Music.playWin = function()
 {
 	if ( !this.isMusic ){return;}
-	cc.audioEngine.playEffect("music/win.mp3", false);
+	cc.audioEngine.playEffect("res/music/win.mp3", false);
 };
 
 Music.stopMusic = function()

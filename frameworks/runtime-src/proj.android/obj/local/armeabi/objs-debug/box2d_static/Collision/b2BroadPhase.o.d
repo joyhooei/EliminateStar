@@ -1,13 +1,13 @@
 obj/local/armeabi/objs-debug/box2d_static/Collision/b2BroadPhase.o: \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/Collision/b2BroadPhase.cpp \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2BroadPhase.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/Collision/b2BroadPhase.cpp \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2BroadPhase.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/assert.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs_elf.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/android/api-level.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2Collision.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2Collision.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/math.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/types.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/stdint.h \
@@ -28,16 +28,16 @@ obj/local/armeabi/objs-debug/box2d_static/Collision/b2BroadPhase.o: \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/machine/limits.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/syslimits.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/page.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2DynamicTree.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2GrowableStack.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2DynamicTree.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2GrowableStack.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/memory.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/string.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/malloc.h \
  D:/Android_NDK/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2BroadPhase.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2BroadPhase.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/assert.h:
 
@@ -47,9 +47,9 @@ D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdef
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/android/api-level.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2Collision.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2Collision.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/math.h:
 
@@ -91,9 +91,9 @@ D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/sysl
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/asm/page.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2DynamicTree.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2DynamicTree.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2GrowableStack.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2GrowableStack.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/memory.h:
 

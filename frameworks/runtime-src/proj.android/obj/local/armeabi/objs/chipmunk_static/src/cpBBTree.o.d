@@ -1,5 +1,5 @@
 obj/local/armeabi/objs/chipmunk_static/src/cpBBTree.o: \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/src/cpBBTree.c \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/src/cpBBTree.c \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/stdlib.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/cdefs.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -23,8 +23,8 @@ obj/local/armeabi/objs/chipmunk_static/src/cpBBTree.o: \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/sysmacros.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/memory.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/stdio.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk_private.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk_private.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/math.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/limits.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/limits.h \
@@ -33,26 +33,26 @@ obj/local/armeabi/objs/chipmunk_static/src/cpBBTree.o: \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/machine/limits.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/syslimits.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/asm/page.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk_types.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpVect.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpBB.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpSpatialIndex.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpBody.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpShape.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpPolyShape.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpArbiter.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpConstraint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpPinJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpSlideJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpPivotJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpGrooveJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpDampedSpring.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpDampedRotarySpring.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpRotaryLimitJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpRatchetJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpGearJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpSimpleMotor.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpSpace.h
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk_types.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpVect.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpBB.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpSpatialIndex.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpBody.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpShape.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpPolyShape.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpArbiter.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpConstraint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpPinJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpSlideJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpPivotJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpGrooveJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpDampedSpring.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpDampedRotarySpring.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpRotaryLimitJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpRatchetJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpGearJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpSimpleMotor.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpSpace.h
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/stdlib.h:
 
@@ -100,9 +100,9 @@ D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/memory.
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/stdio.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk_private.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk_private.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/math.h:
 
@@ -120,42 +120,42 @@ D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/sys
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/asm/page.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk_types.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/chipmunk_types.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpVect.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpVect.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpBB.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpBB.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpSpatialIndex.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpSpatialIndex.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpBody.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpBody.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpShape.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpShape.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpPolyShape.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpPolyShape.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpArbiter.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpArbiter.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpConstraint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpConstraint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpPinJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpPinJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpSlideJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpSlideJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpPivotJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpPivotJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpGrooveJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpGrooveJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpDampedSpring.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpDampedSpring.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpDampedRotarySpring.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpDampedRotarySpring.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpRotaryLimitJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpRotaryLimitJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpRatchetJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpRatchetJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpGearJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpGearJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpSimpleMotor.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/constraints/cpSimpleMotor.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpSpace.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/chipmunk/include/chipmunk/cpSpace.h:

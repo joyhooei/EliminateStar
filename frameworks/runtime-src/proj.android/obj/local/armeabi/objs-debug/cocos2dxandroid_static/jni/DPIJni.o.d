@@ -1,21 +1,21 @@
 obj/local/armeabi/objs-debug/cocos2dxandroid_static/jni/DPIJni.o: \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/jni/DPIJni.cpp \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/jni/DPIJni.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/jni/JniHelper.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/jni/DPIJni.cpp \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/jni/DPIJni.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/jni/JniHelper.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/jni.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs_elf.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/android/api-level.h \
  D:/Android_NDK/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.8/include/string \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/CCPlatformMacros.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/ccConfig.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/CCPlatformConfig.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/CCPlatformDefine.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/CCPlatformMacros.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/ccConfig.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/CCPlatformConfig.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/CCPlatformDefine.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/android/log.h
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/jni/DPIJni.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/jni/DPIJni.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/jni/JniHelper.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/jni/JniHelper.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/jni.h:
 
@@ -27,12 +27,12 @@ D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/android/
 
 D:/Android_NDK/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.8/include/string:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/CCPlatformMacros.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/CCPlatformMacros.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/ccConfig.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/ccConfig.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/CCPlatformConfig.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/../../base/CCPlatformConfig.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/CCPlatformDefine.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/platform/android/CCPlatformDefine.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/android/log.h:

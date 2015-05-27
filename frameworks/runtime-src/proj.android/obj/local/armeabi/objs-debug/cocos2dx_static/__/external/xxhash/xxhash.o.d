@@ -1,6 +1,6 @@
 obj/local/armeabi/objs-debug/cocos2dx_static/__/external/xxhash/xxhash.o: \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/xxhash/xxhash.c \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/xxhash/xxhash.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/xxhash/xxhash.c \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/xxhash/xxhash.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/stdlib.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -24,7 +24,7 @@ obj/local/armeabi/objs-debug/cocos2dx_static/__/external/xxhash/xxhash.o: \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/sysmacros.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/memory.h
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/xxhash/xxhash.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/xxhash/xxhash.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/stdlib.h:
 

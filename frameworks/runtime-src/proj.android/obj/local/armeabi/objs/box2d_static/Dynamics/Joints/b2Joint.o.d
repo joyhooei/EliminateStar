@@ -1,8 +1,8 @@
 obj/local/armeabi/objs/box2d_static/Dynamics/Joints/b2Joint.o: \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/Dynamics/Joints/b2Joint.cpp \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2Joint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/Dynamics/Joints/b2Joint.cpp \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2Joint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/assert.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/cdefs.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -27,38 +27,38 @@ obj/local/armeabi/objs/box2d_static/Dynamics/Joints/b2Joint.o: \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/machine/limits.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/syslimits.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/asm/page.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2DistanceJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2WheelJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2MouseJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2RevoluteJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2PrismaticJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2PulleyJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2GearJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2WeldJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2FrictionJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2RopeJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2MotorJoint.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2Body.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/Shapes/b2Shape.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2BlockAllocator.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2Collision.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2DistanceJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2WheelJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2MouseJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2RevoluteJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2PrismaticJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2PulleyJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2GearJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2WeldJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2FrictionJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2RopeJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2MotorJoint.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2Body.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/Shapes/b2Shape.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2BlockAllocator.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2Collision.h \
  D:/Android_NDK/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.8/include/memory \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2World.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2StackAllocator.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2ContactManager.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2BroadPhase.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2DynamicTree.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2GrowableStack.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2World.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2StackAllocator.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2ContactManager.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2BroadPhase.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2DynamicTree.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2GrowableStack.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/memory.h \
  D:/Android_NDK/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2WorldCallbacks.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2TimeStep.h
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2WorldCallbacks.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2TimeStep.h
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2Joint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2Joint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/assert.h:
 
@@ -108,54 +108,54 @@ D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/sys
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/asm/page.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2DistanceJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2DistanceJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2WheelJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2WheelJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2MouseJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2MouseJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2RevoluteJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2RevoluteJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2PrismaticJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2PrismaticJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2PulleyJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2PulleyJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2GearJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2GearJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2WeldJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2WeldJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2FrictionJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2FrictionJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2RopeJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2RopeJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2MotorJoint.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/Joints/b2MotorJoint.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2Body.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2Body.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/Shapes/b2Shape.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/Shapes/b2Shape.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2BlockAllocator.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2BlockAllocator.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2Collision.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2Collision.h:
 
 D:/Android_NDK/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.8/include/memory:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2World.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2World.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2StackAllocator.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2StackAllocator.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2ContactManager.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2ContactManager.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2BroadPhase.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2BroadPhase.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2DynamicTree.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Collision/b2DynamicTree.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2GrowableStack.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2GrowableStack.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/memory.h:
 
 D:/Android_NDK/android-ndk-r9d/sources/cxx-stl/gnu-libstdc++/4.8/include/algorithm:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2WorldCallbacks.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2WorldCallbacks.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2TimeStep.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Dynamics/b2TimeStep.h:

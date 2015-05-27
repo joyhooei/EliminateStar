@@ -1,8 +1,8 @@
 obj/local/armeabi/objs/box2d_static/Common/b2Draw.o: \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/Common/b2Draw.cpp \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Draw.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/Common/b2Draw.cpp \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Draw.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/assert.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/cdefs.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -28,11 +28,11 @@ obj/local/armeabi/objs/box2d_static/Common/b2Draw.o: \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/syslimits.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/asm/page.h
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Draw.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Draw.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Math.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/external/Box2D/../Box2D/Common/b2Settings.h:
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/assert.h:
 

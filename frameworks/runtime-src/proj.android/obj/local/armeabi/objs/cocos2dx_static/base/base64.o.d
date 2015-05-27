@@ -1,5 +1,5 @@
 obj/local/armeabi/objs/cocos2dx_static/base/base64.o: \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/base64.cpp \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/base64.cpp \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/stdio.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/cdefs.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -22,7 +22,7 @@ obj/local/armeabi/objs/cocos2dx_static/base/base64.o: \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/alloca.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/strings.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/memory.h \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/base64.h
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/base64.h
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/stdio.h:
 
@@ -68,4 +68,4 @@ D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/strings
 
 D:/Android_NDK/android-ndk-r9d/platforms/android-17/arch-arm/usr/include/memory.h:
 
-E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/base64.h:
+E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./base/base64.h:

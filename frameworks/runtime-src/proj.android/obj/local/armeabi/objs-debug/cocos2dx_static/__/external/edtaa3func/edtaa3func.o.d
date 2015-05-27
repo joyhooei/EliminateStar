@@ -1,5 +1,5 @@
 obj/local/armeabi/objs-debug/cocos2dx_static/__/external/edtaa3func/edtaa3func.o: \
- E:\2dGameProject\EliminateStar\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/edtaa3func/edtaa3func.cpp \
+ E:\2dGameProject\Practicee\frameworks\runtime-src\proj.android\../../js-bindings/cocos2d-x/cocos/./../external/edtaa3func/edtaa3func.cpp \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/math.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs.h \
  D:/Android_NDK/android-ndk-r9d/platforms/android-9/arch-arm/usr/include/sys/cdefs_elf.h \

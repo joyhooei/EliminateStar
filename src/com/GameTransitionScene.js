@@ -18,6 +18,12 @@ var TransitionScene = ccui.Layout.extend(
 	{
 		this.isNewGame = isNewGame;//是否为新游戏，如果是则初始化玩家信息，从初始玩起
 		this.size = Def.windowSize();//布局尺寸
+		//初始化玩家信息
+		if(this.isNewGame == true)
+		{
+			PlayerDate.level = 1;
+			PlayerDate.score = 0;
+		}
 		this.level = PlayerDate.level;//当前关卡
 		//获得当前关卡的目标分数
 		for(var i = 0; i < levelData.length; i++)
@@ -41,25 +47,6 @@ var TransitionScene = ccui.Layout.extend(
 		this.addChild(backGround, 0);
 		var backGround1 = new myImage(res.mainbackbottom);
 		this.addChild(backGround1, 0);
-
-		//初始化玩家信息
-		if(this.isNewGame == true)
-		{
-			PlayerDate.level = 1;
-			PlayerDate.score = 0;
-//			PlayerLocalData.deleteItem();
-		}
-//		this.playerGameData = PlayerLocalData.getItem();
-		//这里要注意,第一次进入游戏时,this.playerGameData是一个数组,之后就变成对象了,这里确保游戏中统一用对象
-//		if(this.playerGameData.length == true)
-//		{
-//			this.playerGameData = this.playerGameData[0];
-//		}
-//		else
-//		{
-//			this.playerGameData = this.playerGameData;
-//		}
-//		this.levelNumber = this.playerGameData.currentLevel;//当前关卡数字
 	},
 	//设置显示文本(当前关卡数,通过关卡分数)
 	setLabel:function()

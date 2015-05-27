@@ -388,7 +388,7 @@ var GameStarLayout = ccui.Layout.extend(
 		var easeOut2 = moveTo2.clone().easing(cc.easeElasticOut());
 		continueGameBtn.runAction(easeOut2);
 		//保存退出
-		var saveAndOut = new myButton("img/saveexit.png");
+		var saveAndOut = new myButton("res/saveexit.png");
 		saveAndOut.setAnchorPoint(0.5, 0.5);
 		saveAndOut.name = "save";
 		saveAndOut.setPosition(cc.p(endX, endY));

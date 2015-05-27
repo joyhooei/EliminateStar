@@ -11,17 +11,17 @@
     ],
     "jsList":[
         "src/resource.js",
-        "src/ClassUtil.js",
-        "src/Def.js",
+        "src/app.js",
+        "src/com/GameUtil.js",
+        "src/com/GameParticleSys.js",
         "src/com/GameCreateStar.js",
         "src/com/GameStarLayout.js",
         "src/com/GameTopInformation.js",
-        "src/com/TransitionScene.js",
         "src/com/GameHelpLayout.js",
         "src/com/GameMainScene.js",
         "src/com/LevelData.js",
         "src/com/PlayerLocalData.js",
         "src/com/GameInitializeScene.js",
-        "src/app.js"
+        "src/com/GameTransitionScene.js"
     ]
 }
