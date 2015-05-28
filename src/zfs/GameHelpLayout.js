@@ -36,7 +36,7 @@ var GameHelpLayout = ccui.Layout.extend(
 		if( state === ccui.Widget.TOUCH_ENDED )
 		{
 			//还回到初始化场景
-			var newGameScene = GameInitializeScene.createScene();
+			var newGameScene = GameFirstScene.createScene();
 			cc.director.runScene(cc.TransitionFade.create(1, newGameScene));
 		}
 	}

@@ -1,27 +1,27 @@
 {
-    "project_type":"javascript",
-    "debugMode":1,
-    "showFPS":true,
-    "frameRate":60,
-    "id":"gameCanvas",
-    "renderMode":2,
-    "engineDir":"frameworks/cocos2d-html5",
-    "modules":[
-        "menus"
-    ],
-    "jsList":[
-        "src/resource.js",
-        "src/app.js",
-        "src/com/GameUtil.js",
-        "src/com/GameParticleSys.js",
-        "src/com/GameCreateStar.js",
-        "src/com/GameStarLayout.js",
-        "src/com/GameTopInformation.js",
-        "src/com/GameHelpLayout.js",
-        "src/com/GameMainScene.js",
-        "src/com/LevelData.js",
-        "src/com/PlayerLocalData.js",
-        "src/com/GameInitializeScene.js",
-        "src/com/GameTransitionScene.js"
-    ]
+  "project_type": "javascript",
+  "debugMode": 1,
+  "showFPS": true,
+  "frameRate": 60,
+  "id": "gameCanvas",
+  "renderMode": 2,
+  "engineDir": "frameworks/cocos2d-html5",
+  "modules": [
+    "menus"
+  ],
+  "jsList": [
+    "src/resource.js",
+    "src/app.js",
+    "src/zfs/GameUtil.js",
+    "src/zfs/GameParticleSys.js",
+    "src/zfs/GameCreateStar.js",
+    "src/zfs/GameStarLayout.js",
+    "src/zfs/GameTopInformation.js",
+    "src/zfs/GameHelpLayout.js",
+    "src/zfs/GameMainScene.js",
+    "src/zfs/LevelData.js",
+    "src/zfs/PlayerLocalData.js",
+    "src/zfs/GameInitializeScene.js",
+    "src/zfs/GameTransitionScene.js"
+  ]
 }
