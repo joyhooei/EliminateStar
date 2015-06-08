@@ -1,3 +1,6 @@
+/**
+ * 玩家游戏数据结构
+ */
 var PlayerDate = {level:1, score:0, mScore:0};
 
 /**
@@ -11,9 +14,12 @@ var playerData111 = function()
 {
 	var playerD = 
 	   {
-		   level:1,			//玩家关卡
-		   score:0,			//游戏得分
-		   mScore:0			//游戏最高得分
+		   //关卡
+		   level:1,			
+		   //游戏得分
+		   score:0,			
+		   //游戏最高得分
+		   mScore:0			
 	   };
 	return playerD;
 };
@@ -23,9 +29,10 @@ var playerData111 = function()
  */
 PlayerLocalData.setItem = function(jsonName)
 {
-	var playerDD= JSON.stringify(PlayerDate); //将json数据结构转换成字符串结构
-	sys.localStorage.setItem("playerData",playerDD);//写入数据
-	cc.log(jsonName);
+	//将json数据结构转换成字符串结构
+	var playerDD= JSON.stringify(PlayerDate);
+	//写入数据
+	sys.localStorage.setItem("playerData",playerDD);
 };
 
 /**
@@ -36,13 +43,14 @@ PlayerLocalData.getItem = function()
 	if(!sys.localStorage.getItem("playerDataExist"))
 	{
 		var playerData1 = JSON.stringify(playerData111());
-		//只有第一次玩家进入游戏才会写入初始玩家数据
+		//只有第一次玩家进入游戏才会写入初始玩家数据[类似单例模式]
 		sys.localStorage.setItem("playerDataExist", "playerDataExist");
 		sys.localStorage.setItem("playerData", playerData1);
 	}
-	var playerDataa = sys.localStorage.getItem("playerData");	//从本地读取数据
-	var playerDatab = JSON.parse(playerDataa);	//将字符串结构转换成json数据结构
-	cc.log(playerDataa);
+	//从本地读取数据
+	var playerDataa = sys.localStorage.getItem("playerData");	
+	//将字符串结构转换成json数据结构
+	var playerDatab = JSON.parse(playerDataa);	
 	return playerDatab;
 };
 
