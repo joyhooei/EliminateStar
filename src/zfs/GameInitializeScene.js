@@ -1,7 +1,7 @@
 /**
  * 游戏初始化场景的建立
  */
-var GameInitializeScene = ccui.Layout.extend(
+var GameFirstScene = ccui.Layout.extend(
 {
 	ctor:function()
 	{
@@ -17,7 +17,7 @@ var GameInitializeScene = ccui.Layout.extend(
 	//基本属性设置
 	setVariable:function()
 	{
-		PlayerDate = PlayerLocalData.getItem();//从本地读取数据
+		PlayerDate = PlayerLocalData.getItem();
 		this.maxScore = PlayerDate.mScore;//游戏最高得分
 	},
 	//初始化函数
@@ -46,7 +46,7 @@ var GameInitializeScene = ccui.Layout.extend(
 		maxScore.y = maxRecord.y;
 		this.addChild(maxScore, 1);
 		//最高纪录
-		var maxScoreLabel = new myText(this.maxScore.toString(), white, 26);
+		var maxScoreLabel = new myText(this.maxScore.toString(), cc.color(255, 255, 255, 255), 26);
 		maxScoreLabel.x = maxScore.x+(maxScore.width - maxScoreLabel.width)/2;
 		maxScoreLabel.y = maxScore.y;
 		this.addChild(maxScoreLabel, 2);
@@ -136,7 +136,7 @@ var GameInitializeScene = ccui.Layout.extend(
 		var moveTo4 = cc.MoveTo.create(2, cc.p(endX, d));
 		var easeOut4 = moveTo4.clone().easing(cc.easeElasticOut());
 		exitGameBtn.runAction(easeOut4);
-		//为按钮注册监听器
+		
 		newGameBtn.addTouchEventListener(this.btnControlGameFunc, this);
 		continueGameBtn.addTouchEventListener(this.btnControlGameFunc, this);
 		helpGameBtn.addTouchEventListener(this.btnControlGameFunc, this);
@@ -283,10 +283,10 @@ var GameInitializeScene = ccui.Layout.extend(
 });
 
 //实例化场景
-GameInitializeScene.createScene = function()
+GameFirstScene.createScene = function()
 {
 	var scene = cc.Scene.create();
-	var layout = new GameInitializeScene();
+	var layout = new GameFirstScene();
 	scene.addChild(layout);
 	return scene;
 };

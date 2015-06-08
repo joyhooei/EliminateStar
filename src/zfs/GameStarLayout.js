@@ -45,11 +45,11 @@ var GameStarLayout = ccui.Layout.extend(
 			this.starObjArr.push([]);
 		}
 		//获得当前关卡的星星个数
-		for ( var i = 0; i < levelData.length; i++ )
+		for ( var i = 0; i < LevelData.length; i++ )
 		{
-			if ( PlayerDate.level == levelData[i].level )
+			if ( PlayerDate.level == LevelData[i].level )
 			{
-				this.starNum = levelData[i].starNumber-2;
+				this.starNum = LevelData[i].starNumber-2;
 				break;
 			}
 		}
@@ -428,7 +428,7 @@ var GameStarLayout = ccui.Layout.extend(
 						
 				case "save"://保存退出
 					GAMETOP.onExitt();
-					var newGameScene = GameInitializeScene.createScene();
+					var newGameScene = GameFirstScene.createScene();
 					cc.director.runScene(cc.TransitionFade.create(1, newGameScene));
 					break;
 					

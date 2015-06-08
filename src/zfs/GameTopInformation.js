@@ -22,11 +22,11 @@ var GameTopInformation = ccui.Layout.extend(
 		this.isPause = false;//是否暂停
 		this.isPassed = false;//是否达到目标分数，过关
 		//获得当前关卡的目标分数
-		for(var i = 0; i < levelData.length; i++)
+		for(var i = 0; i < LevelData.length; i++)
 		{
-			if(this.level == levelData[i].level)
+			if(this.level == LevelData[i].level)
 			{
-				this.sScore = levelData[i].standards;//目标分数
+				this.sScore = LevelData[i].standards;//目标分数
 				break;
 			}
 		}
@@ -34,10 +34,9 @@ var GameTopInformation = ccui.Layout.extend(
 	//初始化
 	zinit:function()
 	{
-		//布局尺寸
 		this.setSize(this.size);
 	},
-	//信息设置及布局
+	//信息设置
 	setInformation:function()
 	{
 		//最高纪录图片
@@ -53,7 +52,7 @@ var GameTopInformation = ccui.Layout.extend(
 		this.addChild(maxScore, 1);
 
 		//最高得分
-		this.maxScoreLabel = new myText(this.mScore.toString(), white, 26);
+		this.maxScoreLabel = new myText(this.mScore.toString(), cc.color(255, 255, 255, 255), 26);
 		this.maxScoreLabel.x = maxScore.x+(maxScore.width - this.maxScoreLabel.width)/2;
 		this.maxScoreLabel.y = maxScore.y;
 		this.addChild(this.maxScoreLabel, 2);
@@ -68,49 +67,49 @@ var GameTopInformation = ccui.Layout.extend(
 		guoguanImg.x = 0;
 		guoguanImg.y = maxRecord.y - guoguanImg.height - 20;
 		this.addChild(guoguanImg, 1);
-		//当前关卡背景图
+		//当前关卡
 		var currentLevelImg = new myImage(res.level);
 		currentLevelImg.x = guoguanImg.x + guoguanImg.width;
 		currentLevelImg.y = guoguanImg.y;
 		this.addChild(currentLevelImg, 1);
-		//当前关卡
-		this.currentLevel = new myText(this.level.toString(), white, 24);
+		
+		this.currentLevel = new myText(this.level.toString(), cc.color(255, 255, 255, 255), 24);
 		this.currentLevel.x = currentLevelImg.x + (currentLevelImg.width -this.currentLevel.width)/2
 		this.currentLevel.y = currentLevelImg.y;
 		this.addChild(this.currentLevel, 1);
-		//目标分数图
+		//目标分数
 		var targetImg = new myImage(res.target);
 		targetImg.x = currentLevelImg.x + currentLevelImg.width + 20;
 		targetImg.y = currentLevelImg.y;
 		this.addChild(targetImg, 1);
-		//目标分数背景图
+		
 		var targetImgbg = new myImage(res.targetBar);
 		targetImgbg.x = this.size.width - targetImgbg.width - 10;
 		targetImgbg.y = targetImg.y;
 		this.addChild(targetImgbg, 1);
-		//目标分数
-		var targetScore = new myText(this.sScore.toString(), white, 25);
+		
+		var targetScore = new myText(this.sScore.toString(), cc.color(255, 255, 255, 255), 25);
 		targetScore.x = targetImgbg.x +(targetImgbg.width - targetScore.width)/2;
 		targetScore.y = targetImgbg.y;
 		this.addChild(targetScore, 1);
-		//得分图
+		//得分
 		var getScore = new myImage(res.defen);
 		getScore.x = this.size.width - getScore.width >> 1;
 		getScore.y = targetScore.y - getScore.height - 10;
 		this.addChild(getScore, 1);
-		//登封背景图
+		
 		var getScoreBg = new myImage(res.defenBar);
 		getScoreBg.x = this.size.width - getScoreBg.width >> 1;
 		getScoreBg.y = getScore.y - getScoreBg.height - 10;
 		this.addChild(getScoreBg, 1);
 		//当前得分
-		this.getScoreNum = new myText(this.score.toFixed(0), white, 25);
+		this.getScoreNum = new myText(this.score.toFixed(0), cc.color(255, 255, 255, 255), 25);
 		this.getScoreNum.setAnchorPoint(0.5, 0);
 		this.getScoreNum.x = this.size.width/2;
 		this.getScoreNum.y = getScoreBg.y;
 		this.addChild(this.getScoreNum, 1);
 	},
-	//暂停和继续游戏控制按钮监听器
+	//暂停和继续游戏控制按钮侦听函数
 	pauseGameBtnFunc:function(target, state)
 	{
 		if(state == ccui.Widget.TOUCH_ENDED)
@@ -120,21 +119,19 @@ var GameTopInformation = ccui.Layout.extend(
 			{
 				target.setOpacity(255);
 				this.isPause = true;
-				//调用星星消除层结束游戏方法，判断是否结束游戏
 				GAMESTARLAYOUT.endGame();
 			}
 		}
 	},
-	//更新游戏得分[在星星消除层成功消除时调用此方法]
+	//更新游戏得分
 	updateGameScore:function(starList)
 	{
-		//消除星星的个数
 		var num = starList.length;
 		this.tempScore = 5*num*num;	
 		//一次性获得一定分数的特效显示
 		this.effectOn();
 		//获得分数特效0.5秒
-		var score = new myText("+"+this.tempScore, red, 30);
+		var score = new myText("+"+this.tempScore, cc.color(255, 0, 0, 255), 30);
 		score.setPosition(cc.p(starList[0].x, starList[0].y));
 		score.scale = 0.5;
 		this.parent.addChild(score, 10);
@@ -145,7 +142,7 @@ var GameTopInformation = ccui.Layout.extend(
 		{
 			this.score += this.tempScore;
 			PlayerDate.score = this.score;
-			this.getScoreNum.setText(this.score);
+			this.getScoreNum.setString(this.score);
 			score.removeFromParent();
 			//判断是否过关
 			this.jugementOverLevel();
@@ -177,7 +174,6 @@ var GameTopInformation = ccui.Layout.extend(
 	//过关特效显示
 	passedLevelEffect:function(str)
 	{
-		//播放通过关卡音效
 		Music.playWin();
 		var win = new myImage(str);
 		win.setAnchorPoint(0.5, 0.5);
@@ -186,7 +182,6 @@ var GameTopInformation = ccui.Layout.extend(
 		var moveTo = cc.moveTo(1,cc.p(240, 400)), scaleTo = cc.scaleTo(1, 1.3, 1.3),easeOut = moveTo.clone().easing(cc.easeInOut(1.0));
 		var sparn = cc.spawn(easeOut, scaleTo);
 		var fadeIn = cc.FadeOut.create(1);
-		//动作播放结束回调动作
 		var callFunc = cc.callFunc(function(){win.removeFromParent()}, this);
 		var sequenct = cc.sequence(sparn, fadeIn , callFunc);
 		win.runAction(sequenct);
@@ -198,8 +193,7 @@ var GameTopInformation = ccui.Layout.extend(
 		//随机取一张鼓励的图
 		var random = Math.floor(Math.random()*imgArr.length);
 		var currentImg = imgArr[random];
-		//一次性消除分数达到180
-		if( this.tempScore >= 180 )
+		if(this.tempScore >= 180)//6个星星
 		{
 			var effect = new myImage(currentImg);
 			effect.setAnchorPoint(0.5, 0.5);
@@ -211,16 +205,13 @@ var GameTopInformation = ccui.Layout.extend(
 			var scaleTo = cc.scaleTo(1, 1.2, 1.2);
 			var spawn = cc.spawn(fadeIn, scaleTo);
 			var fadeOut = cc.FadeOut.create(1.2);
-			//动作播放结束回调动作
 			var callFunc = cc.CallFunc.create(function(){effect.removeFromParent()}, this);
 			var sequence = cc.sequence(spawn, fadeOut, callFunc);
 			effect.runAction(sequence);
 		}
 	},
-	//保存数据
 	onExitt:function()
 	{
-		//如果当前得分大于玩家最高得分，则更新最高得分
 		if ( this.score > PlayerDate.mScore )
 		{
 			PlayerDate.mScore = this.score;

@@ -2,7 +2,7 @@
  * 关卡配置
  * 每一关的通过分数和星星数量配置档
  */
-var levelData = 
+var LevelData = 
 [
  {level:1, standards:1000, starNumber:6},
  {level:2, standards:3000, starNumber:6},

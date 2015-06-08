@@ -18,7 +18,6 @@ var TransitionScene = ccui.Layout.extend(
 	{
 		this.isNewGame = isNewGame;//是否为新游戏，如果是则初始化玩家信息，从初始玩起
 		this.size = Def.windowSize();//布局尺寸
-		//初始化玩家信息
 		if(this.isNewGame == true)
 		{
 			PlayerDate.level = 1;
@@ -26,11 +25,11 @@ var TransitionScene = ccui.Layout.extend(
 		}
 		this.level = PlayerDate.level;//当前关卡
 		//获得当前关卡的目标分数
-		for(var i = 0; i < levelData.length; i++)
+		for(var i = 0; i < LevelData.length; i++)
 		{
-			if(this.level == levelData[i].level)
+			if(this.level == LevelData[i].level)
 			{
-				this.sScore = levelData[i].standards;
+				this.sScore = LevelData[i].standards;
 				break;
 			}
 		}
@@ -52,17 +51,17 @@ var TransitionScene = ccui.Layout.extend(
 	setLabel:function()
 	{
 		//当前进入关卡
-		var currentLevel = new myText("level "+this.level.toString(),white, 20);
+		var currentLevel = new myText("level "+this.level.toString(),cc.color(255, 255, 255, 255), 20);
 		currentLevel.x = this.size.width - currentLevel.width >> 1;//居中
 		currentLevel.y = 500;
 		this.addChild(currentLevel, 1);
 		
-		var targetTxt = new myText("target score is", white, 20);
+		var targetTxt = new myText("target score is", cc.color(255, 255, 255, 255), 20);
 		targetTxt.x = this.size.width - targetTxt.width >> 1;
 		targetTxt.y = currentLevel.y - targetTxt.height - 10;
 		this.addChild(targetTxt, 1);
 		//通关分数
-		var targetScore = new myText(this.sScore.toString(), white, 20);
+		var targetScore = new myText(this.sScore.toString(), cc.color(255, 255, 255, 255), 20);
 		targetScore.x = this.size.width - targetScore.width >> 1;
 		targetScore.y = targetTxt.y - targetScore.height - 10;
 		this.addChild(targetScore, 1);
