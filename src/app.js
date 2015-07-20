@@ -4,7 +4,7 @@ var HelloWorldLayer = cc.Layer.extend({
     {
     	this._super();
     	cc.log(1, 2, 3);
-    }
+    }  
 });
 
 var HelloWorldScene = cc.Scene.extend(
